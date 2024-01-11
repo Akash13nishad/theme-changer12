@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomcolor</title>
+    <link rel="stylesheet" href="randomcolor.css">
+</head>
+<body>
+<div  class="main">
+
+
+    <div class="container">
+
+        <h2>Theme changer</h2>
+
+        <button class="btn">Click me</button>
+
+        <div class="value">
+            <input id="text" >
+        <input id="text1"> 
+        <input id="text2">
+    </div>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+const container = document.querySelector(".container")
+const btn= document.querySelector('.btn')
+console.log(btn)
+console.log(container)
+btn.addEventListener('click',()=>{
+   
+    const random = Math.floor(Math.random()*250)
+   
+    const random1 = Math.floor(Math.random()*255)
+   
+    const random2 = Math.floor(Math.random()*255)
+    
+
+    const color= `rgb(${random},${random1}, ${random2})`
+    const color2=`rgb(${random2},${random1}, ${random})`
+    const color3=`rgb(${random1},${random}, ${random2})`
+   
+    const random4 =  ` background-image :linear-gradient(to right, ${color}, ${color2},${color3})`
+
+
+    container.style.cssText = random4;
+
+    const text = document.querySelector("#text")
+    const text1 = document.querySelector("#text1")
+    const text2 = document.querySelector("#text2")
+
+    text.setAttribute("value",`${color}`)
+    text1.setAttribute("value",`${color2}`)
+    text2.setAttribute("value",`${color3}`)
+
+    text.style.backgroundColor = `${color}`
+    text1.style.backgroundColor = `${color2}`
+    text2.style.backgroundColor = `${color3}`
+})
+
+
+
+</script>
+    
+</body>
+</html>
